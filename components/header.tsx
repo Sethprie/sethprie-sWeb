@@ -44,9 +44,9 @@ export default function Header() {
           </a>
         </div>
 
-        <button className="px-6 py-2 text-foreground font-black text-sm uppercase tracking-widest border-2 border-accent hover:bg-accent hover:text-background transition-all hover:shadow-lg hover:drop-shadow-[0_0_12px_rgba(255,100,0,0.8)]">
+        {/* <button className="px-6 py-2 text-foreground font-black text-sm uppercase tracking-widest border-2 border-accent hover:bg-accent hover:text-background transition-all hover:shadow-lg hover:drop-shadow-[0_0_12px_rgba(255,100,0,0.8)]">
           Conectar
-        </button>
+        </button> */}
       </nav>
     </header>
   )

@@ -4,11 +4,14 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
+import Footer from "@/components/Footer";
+import GridOverlay from "@/components/GridOverlay"
+
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Sethprie - Hub",
+  title: "Sethprie",
   description: "Explore my profiles as a Streamer, Indie Dev, and Designer",
   generator: "v0.app",
   icons: {
@@ -36,9 +39,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`font-sans antialiased dark`}>
+        <GridOverlay />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 interface PanelCardProps {
   title: string
@@ -10,16 +11,33 @@ interface PanelCardProps {
   icon: string
   index: number
   mousePosition: { x: number; y: number }
+  aspect?: string // NUEVO: relación de aspecto, ej: "aspect-[4/5]"
+  link?: string   // NUEVO: URL a la que debe ir al hacer click
 }
 
-export default function PanelCard({ title, subtitle, image, icon, index, mousePosition }: PanelCardProps) {
+export default function PanelCard({
+  title,
+  subtitle,
+  image,
+  icon,
+  index,
+  mousePosition,
+  aspect = "aspect-[9/16]",
+  link,
+}: PanelCardProps) {
   const [isHovered, setIsHovered] = useState(false)
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (link) router.push(link)
+  }
 
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative h-[600px] md:h-[700px] rounded-none overflow-hidden cursor-pointer border border-primary/30"
+      onClick={handleClick}
+      className={`group relative ${aspect} rounded-none overflow-hidden cursor-pointer border border-primary/30`}
       style={{
         transform: isHovered ? "translateY(-12px) scale(1.03)" : "translateY(0) scale(1)",
         transition: "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
@@ -44,7 +62,13 @@ export default function PanelCard({ title, subtitle, image, icon, index, mousePo
           transform: isHovered ? "scale(1.15)" : "scale(1)",
         }}
       >
-        <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" priority={index === 0} />
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={title}
+          fill
+          className="object-cover"
+          priority={index === 0}
+        />
       </div>
 
       <div
@@ -85,32 +109,31 @@ export default function PanelCard({ title, subtitle, image, icon, index, mousePo
           {subtitle}
         </p>
 
-        {/* CTA Button */}
         <button
-          className={`px-8 py-3 border-2 border-accent font-black text-sm uppercase tracking-widest transition-all duration-500 transform ${
+          className={`px-8 py-3 border-2 border-accent font-black text-sm uppercase tracking-widest transition-all duration-500 transform pointer-events-none ${
             isHovered ? "scale-100 opacity-100 bg-accent text-background" : "scale-75 opacity-0"
           }`}
           style={{
-            boxShadow: isHovered ? "0 0 20px rgba(255,100,0,0.8), inset 0 0 10px rgba(255,100,0,0.3)" : "none",
+            boxShadow: isHovered
+              ? "0 0 20px rgba(255,100,0,0.8), inset 0 0 10px rgba(255,100,0,0.3)"
+              : "none",
           }}
         >
           Explorar
         </button>
       </div>
 
+      {/* Esquinas y top border glow */}
       <div
         className={`absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-accent transition-all duration-500 ${
           isHovered ? "opacity-100 scale-100" : "opacity-30 scale-50"
         }`}
       />
-
       <div
         className={`absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-primary transition-all duration-500 ${
           isHovered ? "opacity-100 scale-100" : "opacity-30 scale-50"
         }`}
       />
-
-      {/* Top border glow */}
       <div
         className={`absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent transition-opacity duration-500 ${
           isHovered ? "opacity-100" : "opacity-0"
