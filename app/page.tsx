@@ -16,21 +16,21 @@ export default function Page() {
       subtitle: "Todo sobre mis streams y videos",
       image: "/streamBCK.jpg",
       icon: "▶",
-      link: "/contenido", // <-- nueva propiedad
+      link: "/contenido",
     },
     {
       title: "Blog",
       subtitle: "Detalles sobre mis proyectos y más",
       image: "/gameDevBCK.jpg",
       icon: "</",
-      link: "/blog", // <-- nueva propiedad
+      link: "/blog",
     },
     {
       title: "Portfolio",
       subtitle: "Mi trabajo y proyectos",
       image: "/webCodeBCK.jpg",
       icon: "◆",
-      link: "/portfolio", // <-- nueva propiedad
+      link: "/portfolio",
     },
   ]
 
@@ -109,7 +109,7 @@ export default function Page() {
                 index={index}
                 mousePosition={mousePosition}
                 aspect="aspect-[4/5]"
-                link={panel.link} // <-- pasamos el link
+                link={panel.link}
               />
             ))}
           </div>

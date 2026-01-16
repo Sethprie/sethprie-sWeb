@@ -26,7 +26,6 @@ function useMediaQuery(query: string) {
   return matches
 }
 
-
 // Componente genérico para renderizar título y descripciones
 function TimelineContent({ item }: { item: TimelineItemType }) {
   return (

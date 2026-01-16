@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+export default {
+  output: "export",
+  images: { unoptimized: true },
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+// const repo = "sethprie.github.io"
+// export default {
+//   output: "export",
+//   basePath: `/${repo}`,
+//   assetPrefix: `/${repo}`,
+//   images: { unoptimized: true },
+// }

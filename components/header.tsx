@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -21,32 +22,31 @@ export default function Header() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
-        <div className="text-xl font-black tracking-tighter text-foreground">SETHPRIE</div>
+        {/* Logo / Nombre */}
+        <Link href="/">
+          <div className="text-xl font-black tracking-tighter text-foreground cursor-pointer">SETHPRIE</div>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="text-foreground/50 hover:text-accent transition-colors font-mono text-sm uppercase tracking-widest hover:drop-shadow-lg hover:drop-shadow-[0_0_8px_rgba(255,100,0,0.6)]"
           >
             Inicio
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/portfolio"
             className="text-foreground/50 hover:text-accent transition-colors font-mono text-sm uppercase tracking-widest hover:drop-shadow-lg hover:drop-shadow-[0_0_8px_rgba(255,100,0,0.6)]"
           >
-            Proyectos
-          </a>
-          <a
-            href="#"
+            Portfolio
+          </Link>
+          <Link
+            href="/contacto"
             className="text-foreground/50 hover:text-accent transition-colors font-mono text-sm uppercase tracking-widest hover:drop-shadow-lg hover:drop-shadow-[0_0_8px_rgba(255,100,0,0.6)]"
           >
             Contacto
-          </a>
+          </Link>
         </div>
-
-        {/* <button className="px-6 py-2 text-foreground font-black text-sm uppercase tracking-widest border-2 border-accent hover:bg-accent hover:text-background transition-all hover:shadow-lg hover:drop-shadow-[0_0_12px_rgba(255,100,0,0.8)]">
-          Conectar
-        </button> */}
       </nav>
     </header>
   )
