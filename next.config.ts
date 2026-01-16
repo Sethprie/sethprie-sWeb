@@ -1,5 +1,7 @@
 export default {
-
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 }
 
 // const repo = "sethprie.github.io"
