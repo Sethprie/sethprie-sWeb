@@ -4,7 +4,7 @@ import { FaTiktok, FaTwitch, FaYoutube, FaDiscord } from "react-icons/fa"
 
 import { useState, useRef } from "react"
 import Header from "@/components/Header"
-import PanelCard from "@/components/panel-card"
+import PanelCard from "@/components/PanelCard"
 
 export default function Page() {
   const containerRef = useRef<HTMLDivElement>(null)
