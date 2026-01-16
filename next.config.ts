@@ -1,6 +1,5 @@
 export default {
-  output: "export",
-  images: { unoptimized: true },
+
 }
 
 // const repo = "sethprie.github.io"
