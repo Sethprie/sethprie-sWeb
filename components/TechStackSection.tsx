@@ -58,22 +58,18 @@ export default function TechStackSection() {
           <div
             key={tech.name}
             className="
-              group
               flex flex-col items-center justify-center
               gap-4
               p-6
               rounded-2xl
               border border-foreground/10
               bg-background
-              transition
-              hover:border-accent
-              hover:-translate-y-1
             "
           >
             {tech.icon ? (
-              <tech.icon className="text-4xl text-foreground/80 group-hover:text-accent transition" />
+              <tech.icon className="text-4xl text-foreground/80" />
             ) : (
-              <span className="text-4xl font-bold text-foreground/80 group-hover:text-accent transition">
+              <span className="text-4xl font-bold text-foreground/80">
                 {tech.name}
               </span>
             )}
