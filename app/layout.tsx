@@ -7,6 +7,8 @@ import "./globals.css"
 import Footer from "@/components/Footer";
 import GridOverlay from "@/components/GridOverlay"
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
