@@ -31,11 +31,11 @@ const projects: Project[] = [
     repoLink: "#",
   },
   {
-    name: "Landing Page",
-    image: "/images/landing.png",
+    name: "Web para pizzería \"El Club de las Pizzas\"",
+    image: "/ss_el-club-de-las-pizzas.png",
     techIcon: SiTailwindcss,
-    repoLink: "#",
-    liveLink: "#",
+    repoLink: "https://github.com/Sethprie/el-club-de-las-pizzas",
+    liveLink: "https://el-club-de-las-pizzas.vercel.app/",
   },
 ]
 
