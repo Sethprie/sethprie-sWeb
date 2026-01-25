@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Sethprie",
   description: "Explore my profiles as a Streamer, Indie Dev, and Designer",
   verification: {
-    google: 'G0kXzz4bqCSRxTv73JwvpsTEGfTJpDQT0s5eRQXFGw8',
+    google: 'bllGUWYStOwlVcPhMGAGnOCKIKACXYOJiprnjRMwWYE',
   },
   generator: "v0.app",
   icons: {
