@@ -15,6 +15,9 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Sethprie",
   description: "Explore my profiles as a Streamer, Indie Dev, and Designer",
+  verification: {
+    google: 'G0kXzz4bqCSRxTv73JwvpsTEGfTJpDQT0s5eRQXFGw8',
+  },
   generator: "v0.app",
   icons: {
     icon: [
