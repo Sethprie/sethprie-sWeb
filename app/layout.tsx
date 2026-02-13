@@ -54,18 +54,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body
-        className={`${geist.variable} ${geistMono.variable} font-sans antialiased dark min-h-screen flex flex-col`}
-      >
+      <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased dark min-h-screen flex flex-col`}>
+        {/* 1. La cuadrícula al fondo */}
         <GridOverlay />
 
-        <Header />
-
-        <main className="flex-1">
-          {children}
-        </main>
-
-        <Footer />
+        {/* 2. El contenido con un z-index superior para que Disqus no se maree */}
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
 
         <Analytics />
         <SpeedInsights />

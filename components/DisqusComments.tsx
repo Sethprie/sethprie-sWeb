@@ -17,29 +17,28 @@ export default function DisqusComments({ slug, title }: DisqusProps) {
 
   if (!mounted) return null;
 
+  // Los valores que la guía pide
+  const disqusShortname = 'sethprie';
   const disqusConfig = {
     url: typeof window !== 'undefined' ? window.location.href : '',
-    identifier: `post-${slug}`,
+    identifier: slug, // El 'id' que pide la guía
     title: title,
     language: 'es_ES',
   };
 
   return (
     <div 
-      id="disqus_thread_container"
-      className="mt-20 pt-10 border-t border-solid border-gray-200 w-full min-h-[400px]"
-      /* Forzamos colores HEX en todas las propiedades que Disqus suele leer */
+      className="mt-20 pt-10 border-t"
       style={{ 
-        color: '#000000', 
-        backgroundColor: '#ffffff',
-        borderColor: '#e5e7eb',
-        appearance: 'none',
-        fontFamily: 'sans-serif'
+        backgroundColor: '#0a0a0a', 
+        color: '#fafafa',
+        borderColor: '#262626',
+        colorScheme: 'dark'
       }} 
     >
       <DiscussionEmbed
-        shortname="sethprie"
-        config={disqusConfig}
+        shortname={disqusShortname} // Cumple la regla
+        config={disqusConfig}       // Cumple la regla
       />
     </div>
   );
