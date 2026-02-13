@@ -1,6 +1,5 @@
 "use client"
 
-import Header from "@/components/Header"
 import Timeline from "@/components/Timeline"
 import TechStackSection from "@/components/TechStackSection"
 import ProjectsSection from "@/components/ProjectsSection"
@@ -9,7 +8,6 @@ import Image from "next/image"
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Header />
 
       {/* Título Principal */}
       <section className="flex flex-col items-center pt-16 pb-0 md:pt-20 md:pb-0 px-4 md:px-6">

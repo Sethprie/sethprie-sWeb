@@ -3,7 +3,6 @@
 import { FaTiktok, FaTwitch, FaYoutube, FaDiscord } from "react-icons/fa"
 
 import { useState, useRef } from "react"
-import Header from "@/components/Header"
 import PanelCard from "@/components/PanelCard"
 
 export default function Page() {
@@ -36,8 +35,6 @@ export default function Page() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
-
       {/* Hero Title */}
       <section className="flex items-center justify-center pt-16 pb-8 md:pt-24 md:pb-12">
         <div className="text-center space-y-4">
