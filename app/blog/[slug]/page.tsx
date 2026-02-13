@@ -1,7 +1,7 @@
 import { getPostBySlug, getAllPosts } from '@/lib/get-posts';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
-import DisqusComments from '@/components/DisqusComments'; // Importamos el componente de comentarios
+import DisqusComments from '@/components/DisqusComments';
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -15,7 +15,6 @@ interface PostProps {
 }
 
 export default async function Page({ params }: PostProps) {
-  // 1. IMPORTANTE: Mantenemos el await porque en Next.js 15+ params ES una promesa.
   const { slug } = await params;
 
   try {
@@ -23,8 +22,8 @@ export default async function Page({ params }: PostProps) {
 
     return (
       <main className="max-w-2xl mx-auto py-20 px-4">
-        {/* Sección del Contenido */}
-        <article className="prose prose-slate lg:prose-xl dark:prose-invert">
+        {/* Contenedor del Artículo */}
+        <article className="prose prose-slate lg:prose-xl dark:prose-invert mb-16">
           <h1 className="mb-2">{data.title}</h1>
           <p className="text-sm text-gray-500 mb-8">Publicado el {data.date}</p>
           <hr className="border-t border-gray-200 dark:border-gray-700 mb-8" />
@@ -32,9 +31,11 @@ export default async function Page({ params }: PostProps) {
           <MDXRemote source={content} />
         </article>
 
-        {/* Sección de Comentarios */}
-        {/* Pasamos el slug y el título para que Disqus cree el hilo correctamente */}
-        <DisqusComments slug={slug} title={data.title} />
+        {/* Separador Visual y Espaciado para Disqus */}
+        <div className="mt-20 pt-10 border-t border-gray-200 dark:border-gray-800 w-full min-h-[400px]">
+          <h3 className="text-xl font-bold mb-8 dark:text-white">Comentarios</h3>
+          <DisqusComments slug={slug} title={data.title} />
+        </div>
       </main>
     );
   } catch (error) {

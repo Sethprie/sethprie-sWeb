@@ -19,6 +19,7 @@ export default function DisqusComments({ slug, title }: DisqusProps) {
     url: `${siteUrl}/blog/${slug}`,
     identifier: `post-${slug}`, // Sugerencia de ChatGPT: prefijo para evitar conflictos
     title: title,
+    language: 'es_ES',
   };
 
   return (
