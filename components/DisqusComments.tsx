@@ -25,12 +25,17 @@ export default function DisqusComments({ slug, title }: DisqusProps) {
   };
 
   return (
-    /* IMPORTANTE: El style={{ color: '#333' }} evita el error de "parseColor" 
-       al darle a Disqus un color hexadecimal simple en lugar de lab() o oklch()
-    */
     <div 
-      className="mt-20 pt-10 border-t border-gray-200 dark:border-gray-800 w-full min-h-[400px]"
-      style={{ color: '#333', backgroundColor: 'transparent' }} 
+      id="disqus_thread_container"
+      className="mt-20 pt-10 border-t border-solid border-gray-200 w-full min-h-[400px]"
+      /* Forzamos colores HEX en todas las propiedades que Disqus suele leer */
+      style={{ 
+        color: '#000000', 
+        backgroundColor: '#ffffff',
+        borderColor: '#e5e7eb',
+        appearance: 'none',
+        fontFamily: 'sans-serif'
+      }} 
     >
       <DiscussionEmbed
         shortname="sethprie"
