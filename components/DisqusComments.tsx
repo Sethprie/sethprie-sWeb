@@ -17,11 +17,10 @@ export default function DisqusComments({ slug, title }: DisqusProps) {
 
   if (!mounted) return null;
 
-  // Los valores que la guía pide
   const disqusShortname = 'sethprie';
   const disqusConfig = {
     url: typeof window !== 'undefined' ? window.location.href : '',
-    identifier: slug, // El 'id' que pide la guía
+    identifier: slug,
     title: title,
     language: 'es_ES',
   };
@@ -31,14 +30,14 @@ export default function DisqusComments({ slug, title }: DisqusProps) {
       className="mt-20 pt-10 border-t"
       style={{ 
         backgroundColor: '#0a0a0a', 
-        color: '#fafafa',
-        borderColor: '#262626',
-        colorScheme: 'dark'
+      //  color: '#fafafa',
+      //  borderColor: '#262626',
+      //  colorScheme: 'dark'
       }} 
     >
       <DiscussionEmbed
-        shortname={disqusShortname} // Cumple la regla
-        config={disqusConfig}       // Cumple la regla
+        shortname={disqusShortname}
+        config={disqusConfig}
       />
     </div>
   );
