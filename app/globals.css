@@ -229,4 +229,13 @@
   .scan-effect:hover::after {
     opacity: 1;
   }
+
+  /* Fuerza colores clásicos para evitar conflicto con lab()/oklch() */
+  #disqus_thread,
+  #disqus_thread * {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+
 }
