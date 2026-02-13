@@ -30,9 +30,9 @@ export default function DisqusComments({ slug, title }: DisqusProps) {
       className="mt-20 pt-10 border-t"
       style={{ 
         backgroundColor: '#0a0a0a', 
-      //  color: '#fafafa',
-      //  borderColor: '#262626',
-      //  colorScheme: 'dark'
+        color: '#fafafa',
+        borderColor: '#262626',
+        colorScheme: 'dark'
       }} 
     >
       <DiscussionEmbed
