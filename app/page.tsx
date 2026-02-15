@@ -79,7 +79,7 @@ export default function Page() {
 
             {/* Discord */}
             <a
-              href="https://discord.gg/zBj4hUeB"
+              href="https://discord.gg/V89yga8Ut9"
               target="_blank"
               rel="noopener noreferrer"
               title="Discord"
@@ -241,7 +241,7 @@ export default function Page() {
                 </a>
 
                 <a
-                  href="https://discord.gg/zBj4hUeB"
+                  href="https://discord.gg/V89yga8Ut9"
                   target="_blank"
                   className="flex-1 text-center px-6 py-3 border-2 border-primary text-primary font-bold hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.8)]"
                 >

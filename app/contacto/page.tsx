@@ -73,7 +73,7 @@ export default function Contacto() {
                   </a>
 
                   <a
-                    href="https://discord.gg/zBj4hUeB"
+                    href="https://discord.gg/V89yga8Ut9"
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Discord"

@@ -74,7 +74,7 @@ export default function Contenido() {
             </a>
 
             <a
-              href="https://discord.gg/zBj4hUeB"
+              href="https://discord.gg/V89yga8Ut9"
               target="_blank"
               rel="noopener noreferrer"
               className="group border-2 border-accent p-6 flex flex-col items-center justify-center hover:bg-accent hover:text-background transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,100,0,0.7)]"
