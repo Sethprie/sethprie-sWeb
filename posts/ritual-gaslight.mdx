@@ -1,0 +1,241 @@
+---
+title: "Ritual Gaslight — Construyendo una pesadilla jugable en clave Indie"
+date: "2026-02-15"
+---
+
+## Ritual Gaslight: Arquitectura de una paranoia interactiva
+
+Desarrollar **Ritual Gaslight** no ha sido simplemente hacer un juego. Ha sido diseñar una experiencia psicológica donde cada sistema mecánico está al servicio de una sola cosa: hacer que el jugador dude de sí mismo.
+
+Este proyecto nace como un híbrido entre survival psicológico, narrativa fragmentada y exploración simbólica. La estética: cyber-occult. El objetivo: manipular percepción, no solo generar miedo.
+
+> No quería que el jugador temiera a los monstruos. Quería que temiera a sus propias decisiones.
+
+---
+
+## Dirección Artística: Neon, Ruina y Ritual
+
+![Cyberpunk Ritual Environment](https://images.unsplash.com/photo-1508610048659-a06b669e3321?q=80&w=2070&auto=format&fit=crop)
+
+La identidad visual se construye sobre tres pilares:
+
+- Arquitectura brutalista deteriorada.
+- Iluminación neón con contraste extremo.
+- Simbología ritual minimalista integrada al entorno.
+
+La clave fue no saturar. En un entorno cyberpunk, el error común es el exceso. Aquí usamos espacios negativos para generar incomodidad.
+
+### Iluminación como mecánica narrativa
+
+La iluminación no solo decora; comunica estados mentales:
+
+- Tonos púrpura → Confusión.
+- Verde ácido → Manipulación.
+- Rojo tenue → Presagio.
+- Oscuridad total → Vulnerabilidad.
+
+La escena nunca está iluminada de forma neutral. Siempre está "opinando" sobre lo que ocurre.
+
+---
+
+## Sistema de Gaslighting Dinámico
+
+El núcleo del juego es un sistema que altera eventos pasados según decisiones futuras. Sí, al revés.
+
+Diseñé un controlador que:
+
+1. Registra eventos clave.
+2. Modifica recuerdos jugables.
+3. Reescribe diálogos.
+4. Cambia layout parcial del mapa.
+
+### Arquitectura del sistema
+
+El sistema se basa en un `MemoryStateManager` que mantiene estados alterables por capas.
+
+````csharp
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MemoryStateManager : MonoBehaviour
+{
+    public static MemoryStateManager Instance;
+
+    private Dictionary<string, MemoryNode> memoryGraph = new Dictionary<string, MemoryNode>();
+    private Stack<string> realityStack = new Stack<string>();
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    public void RegisterMemory(string id, string description, float instabilityFactor)
+    {
+        if (!memoryGraph.ContainsKey(id))
+        {
+            memoryGraph.Add(id, new MemoryNode(id, description, instabilityFactor));
+        }
+    }
+
+    public void TriggerAlteration(string id)
+    {
+        if (!memoryGraph.ContainsKey(id)) return;
+
+        MemoryNode node = memoryGraph[id];
+        node.AlterMemory();
+
+        realityStack.Push(id);
+        ApplyRealityShift(node);
+    }
+
+    private void ApplyRealityShift(MemoryNode node)
+    {
+        float distortion = node.InstabilityFactor;
+
+        foreach (var memory in memoryGraph.Values)
+        {
+            if (memory != node)
+            {
+                memory.AdjustStability(distortion * UnityEngine.Random.Range(0.1f, 0.5f));
+            }
+        }
+
+        Shader.SetGlobalFloat("_RealityDistortion", distortion);
+    }
+
+    public void RevertLastShift()
+    {
+        if (realityStack.Count == 0) return;
+
+        string last = realityStack.Pop();
+        memoryGraph[last].Restore();
+
+        Shader.SetGlobalFloat("_RealityDistortion", 0f);
+    }
+}
+
+[Serializable]
+public class MemoryNode
+{
+    public string Id;
+    public string Description;
+    public float InstabilityFactor;
+    private float stability = 1f;
+
+    public MemoryNode(string id, string description, float instability)
+    {
+        Id = id;
+        Description = description;
+        InstabilityFactor = instability;
+    }
+
+    public void AlterMemory()
+    {
+        stability -= InstabilityFactor;
+        Debug.Log($"Memory {Id} altered. Stability now: {stability}");
+    }
+
+    public void AdjustStability(float amount)
+    {
+        stability -= amount;
+    }
+
+    public void Restore()
+    {
+        stability = 1f;
+    }
+}
+`````
+
+Este sistema no solo altera variables. Afecta shaders, audio, comportamiento NPC y layout procedural.
+
+---
+
+## Diseño de Personajes
+
+![Cyberpunk Character Portrait](https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80\&w=1974\&auto=format\&fit=crop)
+
+Los personajes no están diseñados para agradar. Están diseñados para generar ambigüedad.
+
+### Tabla comparativa de atributos
+
+| Personaje       | Voluntad | Estabilidad Mental | Influencia Ritual | Resistencia Física |
+| --------------- | -------- | ------------------ | ----------------- | ------------------ |
+| Arkan           | 8        | 4                  | 9                 | 6                  |
+| Lysa            | 6        | 7                  | 5                 | 5                  |
+| El Custodio     | 9        | 10                 | 10                | 8                  |
+| Eco Fragmentado | 3        | 2                  | 6                 | 2                  |
+
+Cada atributo impacta:
+
+* Eventos disponibles.
+* Distorsión de entorno.
+* Finales posibles.
+* Intensidad de manipulación narrativa.
+
+---
+
+## Pipeline Técnico
+
+Stack principal:
+
+* Unity (HDRP)
+* C#
+* Shader Graph personalizado
+* Sistema de eventos basado en ScriptableObjects
+* Guardado por capas narrativas
+
+### Estructura modular
+
+Separé el proyecto en:
+
+* Core Systems
+* Ritual Logic
+* Perception Engine
+* Narrative Graph
+* Visual Distortion
+
+Esto me permitió iterar mecánicas sin romper la narrativa.
+
+---
+
+## Decisiones difíciles
+
+Hubo momentos donde el juego era demasiado críptico. Y aquí viene algo importante:
+
+> Oscuridad no significa profundidad.
+
+Tuve que reequilibrar la experiencia para que el jugador se sintiera confundido, pero no estafado.
+
+Ese balance es brutalmente difícil.
+
+---
+
+## Próximos pasos
+
+* Sistema procedural de símbolos rituales.
+* Audio reactivo a estabilidad mental.
+* Modo "Verdad" desbloqueable tras múltiples finales.
+* Integración de feedback háptico en eventos críticos.
+
+---
+
+## Reflexión final
+
+Ritual Gaslight no busca ser cómodo. Busca ser honesto con una idea: la realidad es maleable cuando la percepción es manipulada.
+
+Y como desarrollador indie, lo más valioso que he aprendido es esto:
+
+No necesitas un equipo gigante.
+Necesitas claridad conceptual y obsesión por la ejecución.
+
+Seguimos construyendo.
+
+Neón encendido. Ritual activo.
+
+```
+```

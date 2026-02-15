@@ -1,41 +1,44 @@
+// app/blog/[slug]/page.tsx
 import { getPostBySlug, getAllPosts } from '@/lib/get-posts';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
 import DisqusComments from '@/components/DisqusComments';
 
-export async function generateStaticParams() {
-  const posts = getAllPosts();
-  return posts.map((slug) => ({
-    slug: slug,
-  }));
-}
-
-interface PostProps {
-  params: Promise<{ slug: string }>;
-}
-
-export default async function Page({ params }: PostProps) {
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
   try {
     const { data, content } = getPostBySlug(slug);
 
     return (
-      <main className="max-w-2xl mx-auto py-20 px-4">
-        {/* Contenedor del Artículo */}
-        <article className="prose prose-slate lg:prose-xl dark:prose-invert mb-16">
-          <h1 className="mb-2">{data.title}</h1>
-          <p className="text-sm text-gray-500 mb-8">Publicado el {data.date}</p>
-          <hr className="border-t border-gray-200 dark:border-gray-700 mb-8" />
-          
-          <MDXRemote source={content} />
-        </article>
+      <main className="min-h-screen bg-background">
+        <article className="max-w-2xl mx-auto px-6 pt-20 pb-20">
+          {/* Header del post: tamaño normal */}
+          <header className="mb-12">
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 text-foreground">
+              {data.title}
+            </h1>
+            <div className="flex items-center gap-3 text-sm text-foreground/50 font-mono">
+              <span className="text-accent">@sethprie</span>
+              <span>•</span>
+              <span>{data.date}</span>
+            </div>
+          </header>
 
-        {/* Separador Visual y Espaciado para Disqus */}
-        <div className="mt-20 pt-10 border-t border-gray-200 dark:border-gray-800 w-full min-h-[400px]">
-          <h3 className="text-xl font-bold mb-8 dark:text-white">Comentarios</h3>
-          <DisqusComments slug={slug} title={data.title} />
-        </div>
+          {/* Cuerpo del texto: Legibilidad máxima */}
+          <div className="prose prose-slate dark:prose-invert max-w-none 
+            prose-p:text-[1.05rem] prose-p:leading-7 prose-p:text-foreground/90
+            prose-headings:text-foreground prose-headings:font-bold prose-headings:tracking-tight
+            prose-a:text-accent prose-strong:text-foreground
+            prose-img:rounded-lg">
+            <MDXRemote source={content} />
+          </div>
+
+          {/* Sección de comentarios discreta */}
+          <footer className="mt-20 pt-10 border-t border-white/10">
+            <DisqusComments slug={slug} title={data.title} />
+          </footer>
+        </article>
       </main>
     );
   } catch (error) {
