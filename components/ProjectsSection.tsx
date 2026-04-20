@@ -37,15 +37,17 @@ const webProjects: Project[] = [
     liveLink: "https://el-club-de-las-pizzas.vercel.app/",
   },
   {
-    name: "3 en raya",
-    techIcon: SiCplusplus,
-    repoLink: "https://github.com/Sethprie/3-en-raya/tree/main",
+    name: "Landing page de Ebos Corporation",
+    image: "/ss_ebos-corporation.png",
+    techIcon: SiNextdotjs,
+    repoLink: "https://github.com/Sethprie/EbosCorporation",
+    liveLink: "https://ebos-corporation.vercel.app/",
   },
-  {
-    name: "Sistema Backend",
-    techIcon: SiPython,
-    repoLink: "#",
-  },
+  // {
+  //   name: "Sistema Backend",
+  //   techIcon: SiPython,
+  //   repoLink: "#",
+  // },
 ]
 
 /* ===== PROYECTOS 3D / JUEGOS ===== */
