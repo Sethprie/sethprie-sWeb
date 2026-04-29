@@ -37,11 +37,18 @@ const webProjects: Project[] = [
     liveLink: "https://el-club-de-las-pizzas.vercel.app/",
   },
   {
-    name: "Landing page de Ebos Corporation",
+    name: "Landing page para Ebos Corporation",
     image: "/ss_ebos-corporation.png",
     techIcon: SiNextdotjs,
     repoLink: "https://github.com/Sethprie/EbosCorporation",
     liveLink: "https://ebos-corporation.vercel.app/",
+  },
+    {
+    name: "Landing page para Apex International Elite",
+    image: "ss_apex-international-elite.png",
+    techIcon: SiNextdotjs,
+    repoLink: "https://github.com/Sethprie/Apex-International-Elite",
+    liveLink: "https://apex-international-elite.vercel.app/",
   },
   // {
   //   name: "Sistema Backend",
