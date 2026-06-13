@@ -43,7 +43,7 @@ export default function Page() {
           </h1>
           <div className="h-1 w-32 mx-auto bg-gradient-to-r from-primary via-accent to-primary" />
           <p className="text-sm md:text-base text-foreground/70 font-mono tracking-widest uppercase">
-            [PROGRAMADOR & CREADOR DIGITAL]
+            [Se pronuncia 'Sef-'pri]
           </p>
           <div className="flex justify-center gap-4 mt-8">
             {/* TikTok */}
