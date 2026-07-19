@@ -1,6 +1,6 @@
 "use client"
 
-import { FaTiktok, FaTwitch, FaYoutube, FaDiscord } from "react-icons/fa"
+import { FaTiktok, FaTwitch, FaYoutube, FaDiscord, FaInstagram, FaGithub } from "react-icons/fa"
 
 import { useState, useRef } from "react"
 import PanelCard from "@/components/PanelCard"
@@ -46,22 +46,12 @@ export default function Page() {
             [Se pronuncia 'Sef-'pri]
           </p>
           <div className="flex justify-center gap-4 mt-8">
-            {/* TikTok */}
-            <a
-              href="https://www.tiktok.com/@sethprie?is_from_webapp=1&sender_device=pc"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="TikTok"
-              className="w-12 h-12 border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,100,0,0.8)]"
-            >
-              <FaTiktok className="w-5 h-5" />
-            </a>
-
             {/* Twitch */}
             <a
               href="https://www.twitch.tv/sethprie"
               target="_blank"
               rel="noopener noreferrer"
+              title="Twitch"
               className="w-12 h-12 border-2 border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.8)]"
             >
               <FaTwitch className="w-5 h-5" />
@@ -72,9 +62,21 @@ export default function Page() {
               href="https://www.youtube.com/@sethpriee"
               target="_blank"
               rel="noopener noreferrer"
+              title="YouTube"
               className="w-12 h-12 border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,100,0,0.8)]"
             >
               <FaYoutube className="w-5 h-5" />
+            </a>
+
+            {/* TikTok */}
+            <a
+              href="https://www.tiktok.com/@sethprie?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="TikTok"
+              className="w-12 h-12 border-2 border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.8)]"
+            >
+              <FaTiktok className="w-5 h-5" />
             </a>
 
             {/* Discord */}
@@ -83,9 +85,31 @@ export default function Page() {
               target="_blank"
               rel="noopener noreferrer"
               title="Discord"
-              className="w-12 h-12 border-2 border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.8)]"
+              className="w-12 h-12 border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,100,0,0.8)]"
             >
               <FaDiscord className="w-5 h-5" />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/sethprie/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+              className="w-12 h-12 border-2 border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.8)]"
+            >
+              <FaInstagram className="w-5 h-5" />
+            </a>
+
+            {/* GitHub */}
+            <a
+              href="https://github.com/Sethprie"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+              className="w-12 h-12 border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,100,0,0.8)]"
+            >
+              <FaGithub className="w-5 h-5" />
             </a>
           </div>
         </div>

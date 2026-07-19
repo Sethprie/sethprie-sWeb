@@ -1,6 +1,6 @@
 "use client"
 
-import { FaTiktok, FaTwitch, FaYoutube, FaDiscord, FaGithub, FaEnvelope } from "react-icons/fa"
+import { FaTiktok, FaTwitch, FaYoutube, FaDiscord, FaGithub, FaEnvelope, FaInstagram } from "react-icons/fa"
 
 export default function Contacto() {
   return (
@@ -43,16 +43,6 @@ export default function Contacto() {
 
                 <div className="flex flex-wrap gap-4">
                   <a
-                    href="https://www.tiktok.com/@sethprie?is_from_webapp=1&sender_device=pc"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="TikTok"
-                    className="w-12 h-12 border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,100,0,0.8)]"
-                  >
-                    <FaTiktok className="w-5 h-5" />
-                  </a>
-
-                  <a
                     href="https://www.twitch.tv/sethprie"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -73,17 +63,37 @@ export default function Contacto() {
                   </a>
 
                   <a
+                    href="https://www.tiktok.com/@sethprie?is_from_webapp=1&sender_device=pc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="TikTok"
+                    className="w-12 h-12 border-2 border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.8)]"
+                  >
+                    <FaTiktok className="w-5 h-5" />
+                  </a>
+
+                  <a
                     href="https://discord.gg/V89yga8Ut9"
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Discord"
-                    className="w-12 h-12 border-2 border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.8)]"
+                    className="w-12 h-12 border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,100,0,0.8)]"
                   >
                     <FaDiscord className="w-5 h-5" />
                   </a>
 
                   <a
-                    href="https://github.com/sethprie"
+                    href="https://www.instagram.com/sethprie/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Instagram"
+                    className="w-12 h-12 border-2 border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.8)]"
+                  >
+                    <FaInstagram className="w-5 h-5" />
+                  </a>
+
+                  <a
+                    href="https://github.com/Sethprie"
                     target="_blank"
                     rel="noopener noreferrer"
                     title="GitHub"
