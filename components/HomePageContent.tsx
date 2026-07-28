@@ -181,7 +181,7 @@ export default function HomePageContent() {
         <div
           className="absolute inset-0 bg-cover bg-right"
           style={{
-            backgroundImage: "url('/a.png')",
+            backgroundImage: "url('/taotv-prota.png')",
           }}
         />
 
@@ -192,14 +192,14 @@ export default function HomePageContent() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="max-w-xl space-y-4">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight">
-              Proyecto Ritual Gaslight
+              Proyecto The Awaking of the Vast
             </h2>
 
             <div className="h-1 w-24 bg-gradient-to-r from-primary to-accent" />
 
             <p className="text-foreground/70 leading-relaxed">
-              Ritual Gaslight es mi juego actualmente en desarrollo. Un proyecto
-              que combina mecanicas propias de un JRPG con las de juegos narrativos al estilo de Beyond Two Souls o The Walking Dead.
+              TAOTV es mi juego actualmente en desarrollo. Un proyecto
+              que combina mecanicas propias de un JRPG con la narrativa ambiental de la saga Dark Souls y los personajes casi vivientes de The 7th Saga.
               Actualmente se encuentra en una etapa temprana de desarrollo, pero puedes seguir su progreso y actualizaciones desde aquí y en mis redes sociales.
             </p>
           </div>
