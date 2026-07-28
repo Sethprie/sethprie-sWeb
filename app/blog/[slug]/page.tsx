@@ -1,8 +1,52 @@
 // app/blog/[slug]/page.tsx
-import { getPostBySlug, getAllPosts } from '@/lib/get-posts';
+import { Metadata } from 'next';
+import { getPostBySlug } from '@/lib/get-posts';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
 import DisqusComments from '@/components/DisqusComments';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+
+  try {
+    const { data } = getPostBySlug(slug);
+    const title = data.title ?? slug.replace(/-/g, ' ');
+    const description = data.description ?? 'Entrada del blog de Sethprie.';
+    const url = `https://sethprie.vercel.app/blog/${slug}`;
+    const publishedTime = data.date ? new Date(data.date).toISOString() : undefined;
+    const keywords = [
+      'Sethprie',
+      'blog',
+      'videojuegos indie',
+      'desarrollo de videojuegos',
+      ...(title ? title.split(/\s+/).slice(0, 5) : []),
+    ];
+
+    return {
+      title,
+      description,
+      keywords,
+      openGraph: {
+        title,
+        description,
+        url,
+        type: 'article',
+        publishedTime,
+        authors: ['https://sethprie.vercel.app'],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+      },
+    };
+  } catch {
+    return {
+      title: 'Entrada no encontrada | Sethprie',
+      description: 'No se encontró el post especificado.',
+    };
+  }
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
