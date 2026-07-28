@@ -1,6 +1,6 @@
 "use client"
 
-import { FaTiktok, FaTwitch, FaYoutube, FaDiscord, FaInstagram, FaGithub } from "react-icons/fa"
+import { FaTiktok, FaTwitch, FaYoutube, FaDiscord, FaInstagram, FaGithub, FaItchIo } from "react-icons/fa"
 
 export default function Contenido() {
   return (
@@ -104,6 +104,17 @@ export default function Contenido() {
               <FaGithub className="w-10 h-10 mb-3 group-hover:scale-110 transition-transform" />
               <span className="font-bold tracking-widest uppercase">GitHub</span>
               <span className="text-xs font-mono mt-2 opacity-70">Código y proyectos</span>
+            </a>
+
+            <a
+              href="https://sethprie.itch.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group border-2 border-primary p-6 flex flex-col items-center justify-center hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_40px_rgba(168,85,247,0.7)]"
+            >
+              <FaItchIo className="w-10 h-10 mb-3 group-hover:scale-110 transition-transform" />
+              <span className="font-bold tracking-widest uppercase">itch.io</span>
+              <span className="text-xs font-mono mt-2 opacity-70">Juegos y proyectos</span>
             </a>
 
           </div>

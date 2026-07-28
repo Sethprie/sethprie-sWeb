@@ -1,4 +1,4 @@
-import { FaTwitch, FaYoutube, FaTiktok, FaDiscord, FaInstagram, FaGithub } from "react-icons/fa"
+import { FaTwitch, FaYoutube, FaTiktok, FaDiscord, FaInstagram, FaGithub, FaItchIo } from "react-icons/fa"
 
 export default function Footer() {
   return (
@@ -64,6 +64,16 @@ export default function Footer() {
             className="w-10 h-10 border-2 border-accent/40 flex items-center justify-center text-accent/60 hover:border-accent hover:text-accent hover:bg-accent/10 transition-all duration-300"
           >
             <FaGithub className="w-4 h-4" />
+          </a>
+
+          <a
+            href="https://sethprie.itch.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="itch.io"
+            className="w-10 h-10 border-2 border-primary/40 flex items-center justify-center text-primary/60 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
+          >
+            <FaItchIo className="w-4 h-4" />
           </a>
         </div>
 

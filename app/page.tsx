@@ -1,6 +1,6 @@
 "use client"
 
-import { FaTiktok, FaTwitch, FaYoutube, FaDiscord, FaInstagram, FaGithub } from "react-icons/fa"
+import { FaTiktok, FaTwitch, FaYoutube, FaDiscord, FaInstagram, FaGithub, FaItchIo } from "react-icons/fa"
 
 import { useState, useRef } from "react"
 import PanelCard from "@/components/PanelCard"
@@ -110,6 +110,17 @@ export default function Page() {
               className="w-12 h-12 border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,100,0,0.8)]"
             >
               <FaGithub className="w-5 h-5" />
+            </a>
+
+            {/* itch.io */}
+            <a
+              href="https://sethprie.itch.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="itch.io"
+              className="w-12 h-12 border-2 border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.8)]"
+            >
+              <FaItchIo className="w-5 h-5" />
             </a>
           </div>
         </div>
