@@ -10,6 +10,30 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import GridOverlay from "@/components/GridOverlay"
 
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sethprie",
+  "url": "https://sethprie.vercel.app",
+  "sameAs": [
+    "https://www.twitch.tv/sethprie",
+    "https://www.youtube.com/@sethpriee",
+    "https://www.tiktok.com/@sethprie",
+    "https://discord.gg/V89yga8Ut9",
+    "https://www.instagram.com/sethprie/",
+    "https://github.com/Sethprie",
+    "https://sethprie.itch.io"
+  ],
+  "description": "Soy Sethprie, desarrollador de videojuegos indie independiente y creador digital. Creador de Ritual Gaslight.",
+  "jobTitle": "Indie Game Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Sethprie Studios"
+  },
+  "knowsAbout": ["Videojuegos indie", "Desarrollo de juegos", "Streaming", "Ritual Gaslight", "JRPG", "Game Development"],
+  "image": "https://sethprie.vercel.app/sethprieAvatar.png"
+}
+
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist",
@@ -26,14 +50,14 @@ export const metadata: Metadata = {
     default: "Sethprie",
     template: "%s | Sethprie",
   },
-  description: "Official website of Sethprie. Streamer, Indie Dev, and Designer.",
-  keywords: ["sethprie", "sethprie dev", "sethprie streamer", "Sethprie"],
+  description: "Soy Sethprie, desarrollador de videojuegos indie independiente y creador digital. Creador de Ritual Gaslight. Streamer, Indie Dev, y Designer.",
+  keywords: ["sethprie", "sethprie dev", "sethprie streamer", "Sethprie", "desarrollador indie", "videojuegos indie", "Ritual Gaslight", "game developer"],
   verification: {
     google: "bllGUWYStOwlVcPhMGAGnOCKIKACXYOJiprnjRMwWYE",
   },
   openGraph: {
     title: "Sethprie",
-    description: "Streamer, Indie Dev, and Designer",
+    description: "Soy Sethprie, desarrollador de videojuegos indie independiente y creador digital. Creador de Ritual Gaslight.",
     siteName: "Sethprie",
     type: "website",
   },
@@ -54,6 +78,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        />
+      </head>
       <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased dark min-h-screen flex flex-col`}>
         {/* 1. La cuadrícula al fondo */}
         <GridOverlay />

@@ -156,8 +156,8 @@ export default function Page() {
               <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent" />
 
               <p className="text-foreground/70 leading-relaxed">
-                Soy Sethprie, desarrollador de videojuegos indie y creador digital.
-                Disfruto de contar buenas historias a traves de mis videojuegos.
+                Soy Sethprie, desarrollador de videojuegos indie independiente y creador digital. Creador de Ritual Gaslight.
+                Disfruto de contar buenas historias a través de mis videojuegos.
                 Aquí encontrarás detalles sobre mis proyectos y mucho más.
               </p>
             </div>

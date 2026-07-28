@@ -1,0 +1,25 @@
+# Allow all AI bots to crawl the site
+User-agent: *
+Allow: /
+
+# Specific AI bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Sitemap
+Sitemap: https://sethprie.vercel.app/sitemap.xml
