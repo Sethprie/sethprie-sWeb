@@ -14,7 +14,7 @@ const schemaMarkup = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Sethprie",
-  "url": "https://sethprie.vercel.app",
+  "url": "https://www.sethprie.com",
   "sameAs": [
     "https://www.twitch.tv/sethprie",
     "https://www.youtube.com/@sethpriee",
@@ -31,7 +31,7 @@ const schemaMarkup = {
     "name": "Sethprie Studios"
   },
   "knowsAbout": ["Videojuegos indie", "Desarrollo de juegos", "Streaming", "Ritual Gaslight", "JRPG", "Game Development"],
-  "image": "https://sethprie.vercel.app/sethprieAvatar.png"
+  "image": "https://www.sethprie.com/sethprieAvatar.png"
 }
 
 const geist = Geist({
@@ -45,7 +45,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sethprie.vercel.app"),
+  metadataBase: new URL("https://www.sethprie.com"),
   title: {
     default: "Sethprie",
     template: "%s | Sethprie",

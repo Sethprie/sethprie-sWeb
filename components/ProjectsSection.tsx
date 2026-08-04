@@ -27,7 +27,7 @@ const webProjects: Project[] = [
     image: "/ss_sethprie.png",
     techIcon: SiNextdotjs,
     repoLink: "https://github.com/Sethprie/sethprie-sWeb",
-    liveLink: "https://sethprie.vercel.app/",
+    liveLink: "https://www.sethprie.com/",
   },
   {
     name: 'Web para pizzería "El Club de las Pizzas"',

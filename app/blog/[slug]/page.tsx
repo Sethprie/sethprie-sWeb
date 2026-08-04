@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { data } = getPostBySlug(slug);
     const title = data.title ?? slug.replace(/-/g, ' ');
     const description = data.description ?? 'Entrada del blog de Sethprie.';
-    const url = `https://sethprie.vercel.app/blog/${slug}`;
+    const url = `https://www.sethprie.com/blog/${slug}`;
     const publishedTime = data.date ? new Date(data.date).toISOString() : undefined;
     const keywords = [
       'Sethprie',
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         url,
         type: 'article',
         publishedTime,
-        authors: ['https://sethprie.vercel.app'],
+        authors: ['https://www.sethprie.com'],
       },
       twitter: {
         card: 'summary_large_image',

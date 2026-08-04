@@ -3,7 +3,7 @@ import path from 'path';
 import { MetadataRoute } from 'next';
 import { getAllPostsData } from '@/lib/get-posts';
 
-const baseUrl = 'https://sethprie.vercel.app';
+const baseUrl = 'https://www.sethprie.com';
 
 function getFileLastModified(relativeFilePath: string) {
   try {

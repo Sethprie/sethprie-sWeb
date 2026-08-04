@@ -22,4 +22,4 @@ User-agent: YouBot
 Allow: /
 
 # Sitemap
-Sitemap: https://sethprie.vercel.app/sitemap.xml
+Sitemap: https://www.sethprie.com/sitemap.xml
