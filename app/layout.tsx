@@ -14,6 +14,7 @@ const schemaMarkup = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Sethprie",
+  "alternateName": "Sergio Luis Prieto Pirela",
   "url": "https://www.sethprie.com",
   "sameAs": [
     "https://www.twitch.tv/sethprie",
@@ -54,6 +55,9 @@ export const metadata: Metadata = {
   keywords: ["sethprie", "sethprie dev", "sethprie streamer", "Sethprie", "desarrollador indie", "videojuegos indie", "Ritual Gaslight", "game developer"],
   verification: {
     google: "bllGUWYStOwlVcPhMGAGnOCKIKACXYOJiprnjRMwWYE",
+  },
+  alternates: {
+    canonical: "/",
   },
   openGraph: {
     title: "Sethprie",
