@@ -15,7 +15,7 @@ const schemaMarkup = {
   "@type": "Person",
   "name": "Sethprie",
   "alternateName": "Sergio Luis Prieto Pirela",
-  "url": "https://www.sethprie.com",
+  "url": "https://sethprie.com",
   "sameAs": [
     "https://www.twitch.tv/sethprie",
     "https://www.youtube.com/@sethpriee",
@@ -32,7 +32,7 @@ const schemaMarkup = {
     "name": "Sethprie Studios"
   },
   "knowsAbout": ["Videojuegos indie", "Desarrollo de juegos", "Streaming", "Ritual Gaslight", "JRPG", "Game Development"],
-  "image": "https://www.sethprie.com/sethprieAvatar.png"
+  "image": "https://sethprie.com/sethprieAvatar.png"
 }
 
 const geist = Geist({
@@ -46,7 +46,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.sethprie.com"),
+  metadataBase: new URL("https://sethprie.com"),
   title: {
     default: "Sethprie",
     template: "%s | Sethprie",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     google: "bllGUWYStOwlVcPhMGAGnOCKIKACXYOJiprnjRMwWYE",
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://sethprie.com/",
   },
   openGraph: {
     title: "Sethprie",
